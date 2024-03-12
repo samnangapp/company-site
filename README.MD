@@ -40,5 +40,3 @@ If you make any changes, bring the container down then up again:
 docker compose down
 docker-compose up -d --build
 ```
-
-If you have any questions [contact me here](https://bizanosa.com/contact/).
