@@ -4,7 +4,11 @@ To run a static HTML & CSS website, put your website files inside of the `site` 
 
 ```nginx
  #/nginx/my.conf
-root /site/static;
+ location / {
+    root /usr/share/nginx/html/;
+    include /etc/nginx/mime.types;
+    try_files $uri $uri/ /index.html;
+  }
 ```
 
 In your dockerfile, you could add your static website from a repository, you dont have to put them in the `site` folder.
@@ -27,7 +31,7 @@ If you change the docker port (in the compose file `docker-compose.yaml` ). You 
 
 ```nginx
   #/nginx/my.conf
-  listen 3000;
+  listen 80;
 ```
 
 If you make any changes, bring the container down then up again:
