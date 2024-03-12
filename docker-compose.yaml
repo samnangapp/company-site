@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   app:
-    container_name: nginx
+    container_name: html-template
     image: robotic1/company-site:1.0.1
     restart: always
     ports:
